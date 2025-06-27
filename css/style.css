@@ -101,7 +101,7 @@ body {
 }
 
 .slideshow .satu {
-  background-image: url("../images/4.jpeg");
+  background-image: url("../images/perpisahan.jpg");
 }
 
 .slideshow .dua {
@@ -264,10 +264,14 @@ body {
   width: 300px;
   height: 300px;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.2);
 }
-
+.kepsek h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
 .kepsek .container .visiMisi {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -420,10 +424,11 @@ body {
 
 .jurusan .boxJurusan .perBox {
   position: relative;
-  margin: 10px;
+  margin: auto;
   width: 350px;
   height: 200px;
   overflow: hidden;
+  
 }
 
 .jurusan .boxJurusan .perBox img {
@@ -655,16 +660,31 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: url("../images/4.jpeg");
   background-size: cover;
   background-position: top center;
   width: 100%;
   height: 100%;
+  transition: 0.3s;
 }
 
-.ekstrakulikuler .perEkstrakulikuler:hover::before {
-  opacity: .7;
+/* Background berbeda berdasarkan kelas tambahan */
+.perEkstrakulikuler.bola::before {
+  background-image: url("../images/sepak bola.jpg");
 }
+
+.perEkstrakulikuler.pramuka::before {
+  background-image: url("../images/pramuka.jpeg");
+}
+
+.perEkstrakulikuler.hadroh::before {
+  background-image: url("../images/Hadroh.jpg");
+}
+
+.perEkstrakulikuler.voli::before {
+  background-image: url("../images/voli.jpg");
+}
+
+
 
 .ekstrakulikuler .perEkstrakulikuler:hover p {
   -webkit-transition: .5s;
@@ -674,6 +694,7 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
 
 .containerEkstra {
   margin-top: 80px;
@@ -760,7 +781,9 @@ body {
 .imgArtikel {
   width: 100%;
   height: 700px;
-  margin-bottom: 50px;
+  margin-bottom: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .shareArtikel p,
