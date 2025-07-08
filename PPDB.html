@@ -1,98 +1,97 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Formulir PPDB Online</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        function kirimForm(event) {
-            event.preventDefault();
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPDB Online 2025 - SMK IT DAARUL FALAAH</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-            const form = document.forms['form-ppdb'];
-            const data = new FormData(form);
+    /* Navbar */
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-            fetch("https://script.google.com/macros/s/AKfycbxwrtMZ81OuZ79tVT9bKHxn6grGfKSIpJCQNb4YmRvF1YHHo5jxG9arnyZtu85DCb9p_w/exec", {
-                method: "POST",
-                body: data
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(result => {
-                    alert("Pendaftaran berhasil!\n" + result);
-                    form.reset();
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("Gagal mengirim data: " + error.message);
-                });
-        }
-    </script>
+    .navbar a {
+      color: #000000f8;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #001aff;
+      color: white;
+      padding: 20px 10px;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    .btn {
+      background-color: #001aff;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #282188;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
 </head>
+<body>
 
-<body class="bg-gray-100 min-h-screen">
-    <!-- ✅ NAVBAR -->
-    <nav class="bg-transparent text-black p-4 shadow-md">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <span class="text-xl font-bold">PPDB Online</span>
-            <ul class="flex space-x-4 text-sm">
-                <li><a href="index.html" class="hover:underline">Beranda</a></li>
-                <li><a href="#" class="hover:underline">Tentang</a></li>
-                <li><a href="kontak.html" class="hover:underline">Kontak</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#">PPDB Online</a>
+  </nav>
 
-    <!-- ✅ FORM -->
-    <div class="max-w-2xl mx-auto mt-8 bg-white p-6 rounded shadow-md">
-        <h2 class="text-2xl font-bold text-center text-gray-700 mb-6">Formulir PPDB</h2>
-        <form name="form-ppdb" class="space-y-4" onsubmit="kirimForm(event)">
-            <div>
-                <label class="block text-sm text-gray-600">Nama Lengkap</label>
-                <input name="nama_lengkap" required class="w-full border rounded px-3 py-2">
-            </div>
-            <div>
-                <label class="block text-sm text-gray-600">Tempat Lahir</label>
-                <input name="tempat_lahir" class="w-full border rounded px-3 py-2">
-            </div>
-            <div>
-                <label class="block text-sm text-gray-600">Tanggal Lahir</label>
-                <input type="date" name="tanggal_lahir" class="w-full border rounded px-3 py-2">
-            </div>
-            <div>
-                <label class="block text-sm text-gray-600">Jenis Kelamin</label>
-                <select name="jenis_kelamin" class="w-full border rounded px-3 py-2">
-                    <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
-                </select>
-            </div>
-            <div>
-                <label class="block text-sm text-gray-600">Nama Ayah</label>
-                <input name="nama_ayah" class="w-full border rounded px-3 py-2">
-            </div>
-            <div>
-                <label class="block text-sm text-gray-600">Nama Ibu</label>
-                <input name="nama_ibu" class="w-full border rounded px-3 py-2">
-            </div>
-            <div>
-                <label class="block text-sm text-gray-600">Nomor HP</label>
-                <input name="no_hp" class="w-full border rounded px-3 py-2" type="tel">
-            </div>
-            <div>
-                <label class="block text-sm text-gray-600">Alamat</label>
-                <textarea name="alamat" class="w-full border rounded px-3 py-2"></textarea>
-            </div>
-            <div class="text-center pt-4">
-                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
-                    Kirim Pendaftaran
-                </button>
-            </div>
-        </form>
-    </div>
+  <header>
+    <h1>PPDB Online SMK IT DAARUL FALAAH 2025</h1>
+    <p>Selamat datang di portal pendaftaran peserta didik baru</p>
+  </header>
+
+  <main>
+    <h2>Pendaftaran Sudah Dibuka!</h2>
+    <p>Silakan klik tombol di bawah untuk mengisi formulir pendaftaran resmi.</p>
+    <a class="btn" href="https://bit.ly/FormulirPPDBSMKITDAARULFALAAH" target="_blank">Daftar Sekarang</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SMK IT DAARUL FALAAH. All rights reserved.</p>
+  </footer>
+
 </body>
-
 </html>
